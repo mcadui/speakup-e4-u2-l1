@@ -124,7 +124,7 @@ export default function SpeakUpL1() {
       .map(m => `${m.role === 'user' ? 'Student' : 'Alex'}: ${m.content}`)
       .join('\n')
     try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
+      const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
